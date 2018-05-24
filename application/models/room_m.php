@@ -4,7 +4,7 @@ class Room_m extends CI_Model {
 
     function __construct()
     {
-        // Call the Model constructor
+        // Call the Model constructor        
         parent::__construct();
     }
     
@@ -24,19 +24,24 @@ class Room_m extends CI_Model {
     } 
     function get_rooms()
     {
+        //$query = $this->db->group_by('room_type')->order_by('room_id')->get('room');
         $query = $this->db->order_by('room_id')->get('room');
+        //$query = $this->db->select('room_id, room_type, COUNT(room_type) as room_count, MAX(room_id) as max_id, MIN(room_id)as min_id')->group_by('room_type')->get('room');
         $data = array();
-
+        
+        //var_dump($query->result());
+		//exit();
         $i=-1;
         foreach (@$query->result() as $row)
         {
-            if($i==-1 || $data[$i]->room_type != $row->room_type || $data[$i]->max_id+1!=$row->room_id) {
+            
+            if($i==-1 || $data[$i]->room_type != $row->room_type || $data[$i]->max_id+1 != $row->room_id) {
                 $i++;
-                $data[$i]->room_type = $row->room_type;
+                $data[$i]->room_type = $row->room_type;                
                 $data[$i]->min_id = intval($row->room_id);
                 $data[$i]->max_id = intval($row->room_id);
             } else {
-                $data[$i]->max_id ++;
+                $data[$i]->max_id++;
             }
         }
         if(count($data))

@@ -54,15 +54,24 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <? foreach ($customer_most_paid as $k => $cust) { ?>
-                  <tr>
-                    <td> <? echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td>
-                    <td> <?=$cust->customer_TCno?> </td>
-                    <td> <?=$cust->checkin_count?></td>
-                    <td> <?=$cust->total_paid?></td>
-                    <!--td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td-->
-                  </tr>
-                  <? } ?>
+                  <?php
+                    foreach ($customer_most_paid as $k => $cust) { 
+                      echo '<tr>';
+                      echo  '<td>'.$cust->customer_firstname." ".$cust->customer_lastname.'</td>';
+                      echo  '<td>'.$cust->customer_TCno .'</td>';
+                      echo  '<td>'.$cust->checkin_count .'</td>';
+                      echo  '<td>'.$cust->total_paid.'</td>';
+                      echo '</tr>';
+                    }
+                  ?>                    
+                  <!--<tr>
+                    <td> <?// echo $cust->customer_firstname." ".$cust->customer_lastname; ?> </td>
+                    <td> <?//=$cust->customer_TCno?> </td>
+                    <td> <?//=$cust->checkin_count?></td>
+                    <td> <?//=$cust->total_paid?></td>
+                    <!td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></t->
+                  </tr>-->
+                  <? //} ?>
                 </tbody>
               </table>
             </div>
@@ -81,7 +90,7 @@
             <!-- /widget-content --> 
           </div>
           <!-- /widget -->
-          <? /* <div class="widget">
+          <?php /* <div class="widget">
             <div class="widget-header"> <i class="icon-file"></i>
               <h3> Content</h3>
             </div>
@@ -168,9 +177,9 @@
             <!-- /widget-header -->
             <div class="widget-content">
               <div class="shortcuts">
-                <a href="/room" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Rooms</span> </a>
-                <a href="/employee" class="shortcut"><i class="shortcut-icon icon-user-md"></i><span class="shortcut-label">Employees</span> </a>
-                <a href="/login/logout" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Logout</span> </a>
+                <a href="<?= base_url();?>room" class="shortcut"><i class="shortcut-icon icon-home"></i><span class="shortcut-label">Rooms</span> </a>
+                <a href="<?= base_url();?>employee" class="shortcut"><i class="shortcut-icon icon-user-md"></i><span class="shortcut-label">Employees</span> </a>
+                <a href="<?= base_url();?>login/logout" class="shortcut"><i class="shortcut-icon icon-off"></i><span class="shortcut-label">Logout</span> </a>
                 
                 <!--<a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span> </a>-->
               </div>
@@ -207,15 +216,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <? foreach ($customer_pay_list as $k => $cust) { ?>
-                  <tr>
-                    <td> <? echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td>
-                    <td> <?=$cust->customer_TCno?> </td>
-                    <td> <?=$cust->checkin_count?></td>
-                    <td> <?=$cust->total_paid?></td>
-                    <!--td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td-->
-                  </tr>
-                  <? } ?>
+                  <?php
+                    foreach ($customer_pay_list as $k => $cust) { 
+                      
+                      echo '<tr>';
+                      echo  '<td>'.$cust->customer_firstname." ".$cust->customer_lastname.'</td>';
+                      echo  '<td>'.$cust->customer_TCno.'</td>';
+                      echo  '<td>'.$cust->checkin_count.'</td>';
+                      echo  '<td>'.$cust->total_paid.'</td>';
+                      echo '</tr>';
+                    }
+                  ?>
+                  <!--tr>
+                    <td> <?// echo $cust->customer_firstname." ".$cust->customer_lastname;?> </td>
+                    <td> <?//=$cust->customer_TCno?> </td>
+                    <td> <?//=$cust->checkin_count?></td>
+                    <td> <?//=$cust->total_paid?></td>
+                    <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+                  </tr>-->
+                  <?// } ?>
                 </tbody>
               </table>
             </div>

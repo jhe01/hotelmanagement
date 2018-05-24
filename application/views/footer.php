@@ -15,15 +15,15 @@
 <!-- Le javascript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src="/js/jquery-1.7.2.min.js"></script> 
-<script src="/js/excanvas.min.js"></script> 
-<script src="/js/chart.min.js" type="text/javascript"></script> 
-<script src="/js/bootstrap.js"></script>
-<script language="javascript" type="text/javascript" src="/js/full-calendar/fullcalendar.min.js"></script>
+<script src="<?= base_url();?>js/jquery-1.7.2.min.js"></script> 
+<script src="<?= base_url();?>js/excanvas.min.js"></script> 
+<script src="<?= base_url();?>js/chart.min.js" type="text/javascript"></script> 
+<script src="<?= base_url();?>js/bootstrap.js"></script>
+<script language="javascript" type="text/javascript" src="<?= base_url();?>/js/full-calendar/fullcalendar.min.js"></script>
  
-<script src="/js/base.js"></script> 
+<script src="<?= base_url();?>js/base.js"></script> 
 
-<?
+<?php
 if($page == "reservation" ) {
 ?>
 <script type="text/javascript">
@@ -81,7 +81,7 @@ if($page == "reservation" ) {
   });
 
 </script>
-<? } else if($page == "dashboard") { ?>
+<?php } else if($page == "dashboard") { ?>
 
 <script>     
   // init calendar
@@ -135,7 +135,7 @@ if($page == "reservation" ) {
   });
 
         var lineChartData = {
-            labels: <? echo json_encode($next_week_freq['dates']);?>,
+            labels: '<?php echo json_encode($next_week_freq['dates']);?>',
             datasets: [
         /*{
             fillColor: "rgba(220,220,220,0.5)",
@@ -149,7 +149,7 @@ if($page == "reservation" ) {
             strokeColor: "rgba(151,187,205,1)",
             pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "#fff",
-            data: <? echo json_encode($next_week_freq['freq_counts']);?>
+            data: <?php echo json_encode($next_week_freq['freq_counts']);?>
         }
       ]
 
@@ -177,10 +177,10 @@ if($page == "reservation" ) {
 
     </script><!-- /Calendar -->
     <!-- Welcome Guide -->
-    <?
+    <?php
     if(SHOW_GUIDE) {
     ?>
-    <script src="js/guidely/guidely.min.js"></script>
+    <script src="<?= base_url();?>js/guidely/guidely.min.js"></script>
 
     <script>
     $(function () {
@@ -220,9 +220,9 @@ if($page == "reservation" ) {
     });
 
     </script>
-    <? } ?>
+    <?php } ?>
     <!--/Welcome Guide-->
-<? } ?>
+<?php } ?>
     <style type="text/css">
     .calendar{-webkit-user-select: none; -moz-user-select: none;}
     </style>

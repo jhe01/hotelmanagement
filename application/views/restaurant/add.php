@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/restaurant/add" method="post">
+		<form action="<?=base_url()?>restaurant/add" method="post">
 		
 			<h1>Add Restaurant</h1>		
 			

@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/massage_room/add" method="post">
+		<form action="<?=base_url()?>massage_room/add" method="post">
 		
 			<h1>Add Massage Room</h1>		
 			

@@ -21,8 +21,8 @@ class Room extends CI_Controller {
 	public function check_login()
 	{
 		if(!UID)
-			redirect("login");
-	} 
+			redirect(base_url());
+	}
 
 	public function add()
 	{
@@ -100,7 +100,7 @@ class Room extends CI_Controller {
 	public function index()
 	{
 		$rooms = $this->room_m->get_rooms();
-
+		
 		$viewdata = array('rooms' => $rooms);
 
 		$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room');

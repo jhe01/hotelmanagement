@@ -2,26 +2,26 @@
 	
 	<div class="content clearfix">
 
-		<form action="/room/edit/<?=$room_range->room_type?>/<?=$room_range->min_id?>/<?=$room_range->max_id?>" method="post">
+		<form action="<?=base_url()?>room/edit/<?=$room_range->room_type?>/<?=$room_range->min_id?>/<?=$room_range->max_id?>" method="post">
 		
 			<h1>Update Rooms</h1>		
-<? if(isset($error)) {?>
+<?php if(isset($error)) {?>
 			<div class="alert alert-danger">
               <button type="button" class="close" data-dismiss="alert">×</button>
               <strong>Error!</strong> <?=$error?>
             </div>
-<? } ?>
+<?php } ?>
 
 			<div class="add-fields">
 
 				<div class="field">
 					<label for="room_range">Room Type:</label>
 					<select id="room_type" name="room_type">
-					<?
+					<?php
 						foreach ($room_types as $rt) {
 							?>
-							<option value="<?=$rt->room_type?>" <? if($rt->room_type==$room_range->room_type) { echo "selected"; } ?>><?=$rt->room_type?></option>
-							<?
+							<option value="<?=$rt->room_type?>" <?php if($rt->room_type==$room_range->room_type) { echo "selected"; } ?>><?=$rt->room_type?></option>
+							<?php
 						}
 					?>
 					</select>

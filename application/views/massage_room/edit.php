@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/massage_room/edit/<?=$massage_room->massageroom_id?>" method="post">
+		<form action="<?=base_url()?>massage_room/edit/<?=$massage_room->massageroom_id?>" method="post">
 		
 			<h1>Update Massage Room's Information</h1>		
 			

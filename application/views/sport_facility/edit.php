@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sport_facility/edit/<?=$sport_facility->sportfacility_id?>" method="post">
+		<form action="<?=base_url()?>sport_facility/edit/<?=$sport_facility->sportfacility_id?>" method="post">
 		
 			<h1>Update Sport Facility's Information</h1>		
 			

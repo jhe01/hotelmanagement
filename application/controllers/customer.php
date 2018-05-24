@@ -21,7 +21,7 @@ class Customer extends CI_Controller {
 	public function check_login()
 	{
 		if(!UID)
-			redirect("login");
+			redirect(base_url());
 	} 
 
 	public function add($ref="")

@@ -6,14 +6,14 @@
         	<a href="javascript:open_form();" class="btn btn-small btn-success"><i class="btn-icon-only icon-plus"></i>Add Sport Service</a>
 			<div class="account-container" style="display: none;" id="form">
 				<div class="content clearfix">
-					<form action="/service/sport_facility" method="post">
+					<form action="<?=base_url()?>service/sport_facility" method="post">
 					
 						<div class="add-fields">
 
 							<div class="field">
 								<label for="customer">Customer:</label>
 								<select name="customer" required>
-									<? foreach ($customers as $customer) {
+									<?php foreach ($customers as $customer) {
 										echo '<option value="'.$customer->customer_id.'">'.$customer->customer_firstname.' '.$customer->customer_lastname.'</option>';
 									 } ?>
 								</select>
@@ -22,7 +22,7 @@
 							<div class="field">
 								<label for="maage">Sport Facility:</label>
 								<select name="sport" required>
-									<? foreach ($sportFacilities as $sport) {
+									<?php foreach ($sportFacilities as $sport) {
 										echo '<option value="'.$sport->sportfacility_id.'">'.$sport->sportfacility_details.'</option>';
 									 } ?>
 								</select>
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<hr>
-			<a href="/sport_facility/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Sport Facility</a>
+			<a href="<?=base_url()?>sport_facility/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Sport Facility</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>
@@ -69,7 +69,7 @@
 				  </tr>
 				</thead>
 				<tbody>
-				<?
+				<?php
 					foreach ($sportFacilities as $sport) {
 						// $emp->username
 				?>
@@ -77,9 +77,9 @@
 				    <td> <?=$sport->sportfacility_open_time?> </td>
 				    <td> <?=$sport->sportfacility_close_time?> </td>
 				    <td> <?=$sport->sportfacility_details?> </td>
-				    <td class="td-actions"><a href="/sport_facility/edit/<?=$sport->sportfacility_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/sport_facility/delete/<?=$sport->sportfacility_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+				    <td class="td-actions"><a href="<?=base_url()?>sport_facility/edit/<?=$sport->sportfacility_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="<?=base_url()?>sport_facility/delete/<?=$sport->sportfacility_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 				  </tr>
-				<? } ?>
+				<?php } ?>
 				</tbody>
 			</table>
 		</div>

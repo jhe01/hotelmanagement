@@ -8,7 +8,7 @@
 <div class="main">
 	<div class="main-inner">
 		<div class="container">
-			<form action="/reservation/make" method="post">
+			<form action="<?=base_url()?>reservation/make" method="post">
 			<div class="add-fields">
 
 				<!--div class="field">
@@ -50,13 +50,13 @@
 							</tr>
 						</thead>
 						<tbody>
-						<? for ($t=0, $i=0; $t<$rows; ++$t) { ?>
+						<?php for ($t=0, $i=0; $t<$rows; ++$t) { ?>
 							<tr>
-								<? for($j=0; $j<$cols && $i<$size; ++$i, ++$j) { ?>
+								<?php for($j=0; $j<$cols && $i<$size; ++$i, ++$j) { ?>
 								<td class="td-actions"><button name="room_id" value="<?=$rooms[$i]->room_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-small btn-primary"><?=$rooms[$i]->room_id?><br><i class="btn-icon-only icon-edit"> </i></button></td>
-							<? } ?>
+							<?php } ?>
 							</tr>
-						<? } ?>
+						<?php } ?>
 						</tbody>
 					</table>
 				</div>

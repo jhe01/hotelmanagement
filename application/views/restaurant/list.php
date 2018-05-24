@@ -6,14 +6,14 @@
 			<a href="javascript:open_form();" class="btn btn-small btn-success"><i class="btn-icon-only icon-plus"></i>Add Restaurant Service</a>
 			<div class="account-container" style="display: none;" id="form">
 				<div class="content clearfix">
-					<form action="/service/restaurant" method="post">
+					<form action="<?=base_url()?>service/restaurant" method="post">
 					
 						<div class="add-fields">
 
 							<div class="field">
 								<label for="customer">Customer:</label>
 								<select name="customer" required>
-									<? foreach ($customers as $customer) {
+									<?php foreach ($customers as $customer) {
 										echo '<option value="'.$customer->customer_id.'">'.$customer->customer_firstname.' '.$customer->customer_lastname.'</option>';
 									 } ?>
 								</select>
@@ -22,7 +22,7 @@
 							<div class="field">
 								<label for="restaurant_name">Restaurant:</label>
 								<select name="restaurant" required>
-									<? foreach ($restaurants as $restaurant) {
+									<?php foreach ($restaurants as $restaurant) {
 										echo '<option value="'.$restaurant->restaurant_name.'">'.$restaurant->restaurant_name.'</option>';
 									 } ?>
 								</select>
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<hr>
-			<a href="/restaurant/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Restaurants</a>
+			<a href="<?=base_url()?>restaurant/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Restaurants</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>
@@ -71,7 +71,7 @@
 				  </tr>
 				</thead>
 				<tbody>
-				<?
+				<?php
 					foreach ($restaurants as $rest) {
 						// $emp->username
 				?>
@@ -81,9 +81,9 @@
 				    <td> <?=$rest->restaurant_close_time?> </td>
 				    <td> <?=$rest->restaurant_details?> </td>
 				    <td> <?=$rest->table_count?> </td>
-				    <td class="td-actions"><a href="/restaurant/edit/<?=$rest->restaurant_name?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/restaurant/delete/<?=$rest->restaurant_name?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+				    <td class="td-actions"><a href="<?=base_url()?>restaurant/edit/<?=$rest->restaurant_name?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/restaurant/delete/<?=$rest->restaurant_name?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 				  </tr>
-				<? } ?>
+				<?php } ?>
 				</tbody>
 			</table>
 		</div>

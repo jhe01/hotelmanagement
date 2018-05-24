@@ -6,14 +6,14 @@
        		<a href="javascript:open_form();" class="btn btn-small btn-success"><i class="btn-icon-only icon-plus"></i>Register Medical Service</a>
 			<div class="account-container" style="display: none;" id="form">
 				<div class="content clearfix">
-					<form action="/service/sport_facility" method="post">
+					<form action="<?=base_url()?>service/sport_facility" method="post">
 					
 						<div class="add-fields">
 
 							<div class="field">
 								<label for="customer">Customer:</label>
 								<select name="customer" required>
-									<? foreach ($customers as $customer) {
+									<?php foreach ($customers as $customer) {
 										echo '<option value="'.$customer->customer_id.'">'.$customer->customer_firstname.' '.$customer->customer_lastname.'</option>';
 									 } ?>
 								</select>
@@ -22,7 +22,7 @@
 							<div class="field">
 								<label for="maage">Medical Service:</label>
 								<select name="sport" required>
-									<? foreach ($medicalServices as $medic) {
+									<?php foreach ($medicalServices as $medic) {
 										echo '<option value="'.$medic->medicalservice_id.'">'.$medic->medicalservice_details.'</option>';
 									 } ?>
 								</select>
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<hr>
-			<a href="/medical_service/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Medical Services</a>
+			<a href="<?=base_url()?>medical_service/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Medical Services</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>
@@ -69,7 +69,7 @@
 				  </tr>
 				</thead>
 				<tbody>
-				<?
+				<?php
 					foreach ($medicalServices as $medServ) {
 						// $emp->username
 				?>
@@ -77,9 +77,9 @@
 				    <td> <?=$medServ->medicalservice_open_time?> </td>
 				    <td> <?=$medServ->medicalservice_close_time?> </td>
 				    <td> <?=$medServ->medicalservice_details?> </td>
-				    <td class="td-actions"><a href="/medical_service/edit/<?=$medServ->medicalservice_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/medical_service/delete/<?=$medServ->medicalservice_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+				    <td class="td-actions"><a href="<?=base_url()?>medical_service/edit/<?=$medServ->medicalservice_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="<?=base_url()?>medical_service/delete/<?=$medServ->medicalservice_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 				  </tr>
-				<? } ?>
+				<?php } ?>
 				</tbody>
 			</table>
 		</div>

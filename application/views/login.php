@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/login" method="post">
+		<form action="<?=base_url()?>login" method="post">
 		
 			<h1>Member Login</h1>		
 			

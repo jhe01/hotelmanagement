@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	public function check_login()
 	{
 		if(UID)
-			redirect("/");
+			redirect(base_url());
 	} 
 
 	public function index()
@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 			$password = $this->input->post("password");
 			if($user=$this->user_m->check_login($username, $password)) {
 				$this->user_l->login($user);
-				redirect("/");
+				redirect(base_url());
 			}
 			else {
 				$viewdata["error"] = true;
@@ -36,7 +36,7 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->user_l->logout();
-		redirect("/");
+		redirect(base_url());
 	}
 }
 

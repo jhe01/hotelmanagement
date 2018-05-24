@@ -21,7 +21,7 @@ class Restaurant extends CI_Controller {
 	public function check_login()
 	{
 		if(!UID)
-			redirect("login");
+			redirect(base_url());
 	} 
 
 	public function add()
@@ -36,7 +36,7 @@ class Restaurant extends CI_Controller {
 			$tableCount = $this->input->post("tableCount");
 			
 			$this->restaurant_m->addRestaurant($restaurantName, $restaurantOpenTime, $restaurantCloseTime, $restaurantDetails, $tableCount);
-			redirect("/restaurant");
+			redirect(base_url()."restaurant");
 		}
 
 		$data = array('title' => 'Add Restaurant - DB Hotel Management System', 'page' => 'restaurant');

@@ -2,15 +2,15 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/room-type/add" method="post">
+		<form action="<?=base_url()?>room-type/add" method="post">
 		
 			<h1>Add Room Type</h1>		
-<? if(isset($error)) {?>
+<?php if(isset($error)) {?>
 			<div class="alert alert-danger">
               <button type="button" class="close" data-dismiss="alert">×</button>
               <strong>Error!</strong> <?=$error?>
             </div>
-<? } ?>
+<?php } ?>
 			<div class="add-fields">
 
 				<div class="field">

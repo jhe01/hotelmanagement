@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/restaurant/edit/<?=$restaurant->restaurant_name?>" method="post">
+		<form action="<?=base_url()?>restaurant/edit/<?=$restaurant->restaurant_name?>" method="post">
 		
 			<h1>Update Restaurant's Information</h1>		
 			

@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/medical_service/edit/<?=$medical_service->medicalservice_id?>" method="post">
+		<form action="<?=base_url()?>medical_service/edit/<?=$medical_service->medicalservice_id?>" method="post">
 		
 			<h1>Update Medical Service's Information</h1>		
 			
